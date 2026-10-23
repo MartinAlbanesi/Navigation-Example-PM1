@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PM1 Navigation XML</string>
+    <string name="home_title">Home</string>
+    <string name="home_description">Ejemplo mínimo: una Activity, dos Fragments y Navigation Component.</string>
+    <string name="open_detail">Ver detalle</string>
+    <string name="detail_title">Detail</string>
+    <string name="detail_item_name">Ejemplo de producto</string>
+    <string name="detail_description">Este destino recibió itemTitle mediante un Bundle.</string>
+    <string name="action_send_email">Enviar email</string>
+    <string name="no_email_app">No hay una aplicación de email disponible.</string>
+</resources>

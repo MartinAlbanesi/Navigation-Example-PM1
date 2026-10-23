@@ -429,7 +429,7 @@ Toast.makeText(this, R.string.no_email_app, Toast.LENGTH_LONG).show()
 
 ## Parte 3: SharedPreferences
 
-> **Estado en este proyecto:** el código actual **no usa SharedPreferences** (no hay ninguna referencia en `app/src`). Esta sección es una **ampliación propuesta**: el ejemplo de abajo **no está implementado** en el repositorio; podés agregarlo vos como práctica.
+> **Estado en este proyecto:** el código actual **no usa SharedPreferences** (no hay ninguna referencia en `app/src`). Esta sección es una **ampliación propuesta**: el ejemplo de abajo **no está implementado** en el repositorio.
 
 ### Qué es
 
@@ -524,12 +524,6 @@ Nota: `onViewCreated` de Home se vuelve a ejecutar al volver desde Detail (la vi
 
 ---
 
-## Ejercicios para el alumno
-
-1. **Segundo argumento.** En `nav_graph.xml` agregá `<argument android:name="quantity" app:argType="integer" />` a Detail, enviá un número desde `HomeFragment` y mostralo en `fragment_detail.xml`. Observá cómo cambia la firma de `actionHomeFragmentToDetailFragment`.
-2. **Nuevo destino.** Creá `AboutFragment` (clase + layout), declaralo en `nav_graph.xml`, agregá una action desde Home y un botón que navegue. Verificá el back stack con Atrás.
-3. **SharedPreferences.** Implementá el ejemplo de la Parte 3. Luego guardá también un `Boolean` (`putBoolean("visited", true)`) y mostrá un texto distinto la primera vez que se abre la app.
-
 ## Errores comunes
 
 | Síntoma | Causa probable |
@@ -543,26 +537,3 @@ Nota: `onViewCreated` de Home se vuelve a ejecutar al volver desde Detail (la vi
 | `resolveActivity` siempre `null` | Falta el bloque `<queries>` en el Manifest |
 | `NullPointerException` en `findViewById` | Id equivocado, o se busca antes de `onViewCreated` |
 | SharedPreferences no persiste | Se olvidó `apply()`/`commit()` tras `putString` |
-
-## Checklist final
-
-- [ ] Gradle sincroniza con Navigation y Safe Args.
-- [ ] `nav_graph.xml` declara Home (inicio), Detail, la action y el argumento `itemTitle`.
-- [ ] `activity_main.xml` contiene el NavHost `nav_host_fragment` con `navGraph`.
-- [ ] `MainActivity` conecta Toolbar y NavController.
-- [ ] Home navega a Detail enviando `itemTitle` con Safe Args.
-- [ ] Detail muestra el argumento recibido.
-- [ ] Atrás y la flecha de la Toolbar respetan el back stack.
-- [ ] El menú abre el Intent de email (o muestra el Toast).
-- [ ] (Ampliación) SharedPreferences guarda y recupera el último ítem.
-
-## Preguntas de cierre
-
-1. ¿Qué diferencia hay entre Activity y Fragment?
-2. ¿Qué describe el Navigation Graph y en qué archivo está?
-3. ¿Qué hace el NavController y cómo se obtiene en `MainActivity` y en un Fragment?
-4. ¿Qué muestra el NavHost?
-5. ¿Qué genera Safe Args y qué problema evita?
-6. ¿Cuándo usamos Navigation Component y cuándo un Intent?
-7. ¿Qué diferencia hay entre pasar un argumento y guardar en SharedPreferences?
-8. ¿Qué diferencia hay entre `apply()` y `commit()`?
